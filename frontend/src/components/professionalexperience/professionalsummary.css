@@ -1,0 +1,634 @@
+.page-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+}
+
+.header-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.header-section h1 {
+  color: #002B5B;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.go-back-btn {
+  color: #0052CC;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.tips-icon {
+  color: #0052CC;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.add-experience-section {
+  border: 2px dashed #0052CC;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.add-more-btn {
+  color: #0052CC;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.experience-card {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+  border: 1px solid #E6E6E6;
+  position: relative;
+  cursor: grab;
+  transition: all 0.2s ease;
+}
+
+.experience-card.dragging {
+  opacity: 0.5;
+  transform: scale(0.98);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.experience-card.drag-over {
+  border: 2px dashed #0052CC;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.experience-number {
+  min-width: 28px;
+  height: 28px;
+  background: #F5F5F5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #002B5B;
+  font-size: 14px;
+}
+
+.experience-content {
+  flex: 1;
+  min-width: 0; /* Prevents flex items from overflowing */
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.experience-header h3 {
+  color: #002B5B;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.title-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.status {
+  color: #666;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #0052CC;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.experience-date {
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+
+.experience-description {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.experience-description li {
+  margin-bottom: 8px;
+  position: relative;
+  padding-left: 15px;
+  color: #4D4D4D;
+  line-height: 1.4;
+  font-size: 14px;
+}
+
+.experience-description li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0052CC;
+}
+
+.show-more-btn {
+  color: #0052CC;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.preview-btn {
+  padding: 8px 16px;
+  border: 1px solid #0052CC;
+  background: white;
+  color: #0052CC;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.next-btn {
+  padding: 8px 16px;
+  background: #17a2b8;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 15px;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.popup-header h2 {
+  font-size: 18px;
+  color: #002B5B;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.options-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.option-btn {
+  padding: 6px 12px;
+  border: 1px solid #0052CC;
+  border-radius: 20px;
+  background: white;
+  color: #0052CC;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.option-btn:hover {
+  background: #f0f5ff;
+}
+
+.add-own-section {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.add-own-btn {
+  color: #0052CC;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+.add-btn {
+  width: 100%;
+  padding: 10px;
+  background: #0052CC;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background: #003d99;
+}
+
+.start-btn {
+  background: none;
+  border: none;
+  color: #0052CC;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.options-menu-container {
+  position: relative;
+}
+
+.options-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border: 1px solid #E6E6E6;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+  min-width: 140px;
+}
+
+.options-menu button {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 13px;
+}
+
+.options-menu button:hover {
+  background: #f5f5f5;
+}
+
+.options-menu .delete-option {
+  color: #dc3545;
+  border-top: 1px solid #E6E6E6;
+}
+
+.options-menu .delete-option:hover {
+  background: #fff5f5;
+}
+
+.action-btn:hover {
+  color: #003d99;
+}
+
+.drag-handle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  cursor: grab;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.drag-handle:hover {
+  background: #f5f5f5;
+}
+
+.drag-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .page-container {
+    flex-direction: row;
+  }
+  
+  .main-content {
+    padding: 40px;
+  }
+  
+  .header-section {
+    margin-bottom: 30px;
+  }
+  
+  .header-section h1 {
+    font-size: 28px;
+  }
+  
+  .go-back-btn {
+    font-size: 16px;
+  }
+  
+  .tips-icon {
+    font-size: 20px;
+  }
+  
+  .add-experience-section {
+    padding: 20px;
+  }
+  
+  .experience-card {
+    padding: 25px;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+  
+  .experience-number {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+  
+  .experience-header h3 {
+    font-size: 18px;
+  }
+  
+  .status {
+    font-size: 14px;
+  }
+  
+  .action-btn {
+    font-size: 16px;
+  }
+  
+  .start-btn {
+    font-size: 16px;
+  }
+  
+  .experience-date {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+  
+  .experience-description li {
+    padding-left: 20px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .show-more-btn {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  
+  .navigation-buttons {
+    gap: 15px;
+    margin-top: 30px;
+  }
+  
+  .preview-btn, .next-btn {
+    padding: 10px 24px;
+    font-size: 16px;
+  }
+  
+  .popup-content {
+    padding: 30px;
+  }
+  
+  .popup-header h2 {
+    font-size: 20px;
+  }
+  
+  .close-btn {
+    font-size: 24px;
+  }
+  
+  .options-container {
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .option-btn {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+  
+  .add-own-btn {
+    font-size: 16px;
+  }
+  
+  .add-btn {
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  .options-menu button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .action-buttons {
+    margin-top: 10px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .drag-handle {
+    top: 15px;
+    right: 10px;
+    transform: none;
+  }
+  
+  .navigation-buttons {
+    justify-content: center;
+  }
+  
+  .preview-btn, .next-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 12px 20px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.experience-details {
+  margin-bottom: 15px;
+}
+
+.organization {
+  color: #002B5B;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 5px 0;
+}
+
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.remote-tag {
+  background: #E6F7FF;
+  color: #0052CC;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.experience-date {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+.experience-description {
+  list-style-type: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.experience-description li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: #4D4D4D;
+  line-height: 1.5;
+}
+
+.experience-description li::before {
+  content: "•";
+  position: absolute;
+  left: 5px;
+  color: #0052CC;
+}
+
+@media (max-width: 768px) {
+  .organization {
+    font-size: 14px;
+  }
+
+  .location-info {
+    font-size: 12px;
+  }
+
+  .experience-date {
+    font-size: 12px;
+  }
+
+  .experience-description li {
+    font-size: 14px;
+  }
+}

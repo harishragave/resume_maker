@@ -1,0 +1,291 @@
+.sidebar {
+  width: 280px;
+  background-color: #0A1F44;
+  color: white;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+/* Logo styles */
+.logo-uh {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.my {
+  color: white;
+}
+
+.perfect {
+  color: #FF6B6B;
+}
+
+.resume {
+  color: white;
+}
+
+/* Steps section */
+.progress-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 20px;
+  flex: 1;
+}
+
+.step {
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.step-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.step-text {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Active and completed states */
+.step.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.step.active .step-number {
+  background-color: white;
+  color: #0A1F44;
+  border-color: white;
+}
+
+.step.active .step-text {
+  color: white;
+  font-weight: 600;
+}
+
+.step.completed .step-number {
+  background-color: #FF6B6B;
+  border-color: #FF6B6B;
+  color: white;
+}
+
+/* Progress section */
+.resume-completeness {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resume-completeness p {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 12px;
+}
+
+.progress-bar {
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.progress {
+  height: 100%;
+  background-color: #FF6B6B;
+  transition: width 0.3s ease;
+}
+
+.percentage {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Footer */
+.footer {
+  margin-top: 24px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s ease;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 11px;
+  margin-top: 16px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    top: 60px;
+    height: calc(100vh - 60px);
+    width: 260px;
+    padding: 20px;
+  }
+
+  .sidebar.mobile-open {
+    transform: translateX(0);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .mobile-header {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: white;
+    padding: 0 20px;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1100;
+  }
+
+  .mobile-logo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #0A1F44;
+  }
+
+  .mobile-menu-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #0A1F44;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .mobile-overlay.active {
+    display: block;
+  }
+
+  .logo-uh {
+    display: none;
+  }
+
+  .step {
+    padding: 10px 16px;
+  }
+
+  .step-number {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  .step-text {
+    font-size: 14px;
+  }
+
+  .resume-completeness {
+    padding-top: 20px;
+  }
+
+  .footer {
+    margin-top: 20px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+  }
+
+  .copyright {
+    font-size: 10px;
+  }
+}
+
+/* Ensure content is pushed right on desktop */
+@media (min-width: 769px) {
+  .resume-builder {
+    margin-left: 280px;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .step {
+    padding: 10px 12px;
+  }
+  
+  .step-number {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+  
+  .step-text {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+  }
+}

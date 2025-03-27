@@ -1,0 +1,209 @@
+.education-summary-container {
+  flex: 1;
+  padding: 40px 60px;
+  margin-left: 0px;
+  background-color: #F9FAFB;
+}
+
+.header-section {
+  margin-bottom: 32px;
+}
+
+.back-link {
+  color: #2563EB;
+  cursor: pointer;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 32px;
+  color: #1F2937;
+}
+
+.tips-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #2563EB;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.add-degree-button {
+  border: 2px dashed #2563EB;
+  color: #2563EB;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.education-item {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.degree-number {
+  width: 32px;
+  height: 32px;
+  background: #E5E7EB;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #4B5563;
+}
+
+.degree-content {
+  flex: 1;
+}
+
+.degree-content h3 {
+  font-size: 16px;
+  color: #1F2937;
+  margin-bottom: 4px;
+}
+
+.degree-content p {
+  color: #6B7280;
+  margin-bottom: 12px;
+}
+
+.coursework-link {
+  color: #2563EB;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.degree-actions {
+  display: flex;
+  gap: 8px;
+  position: relative;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #6B7280;
+  border-radius: 4px;
+}
+
+.action-btn:hover {
+  background: #F3F4F6;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.preview-btn {
+  padding: 12px 24px;
+  border: 1px solid #2563EB;
+  color: #2563EB;
+  background: white;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.next-btn {
+  padding: 12px 24px;
+  background: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.options-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  min-width: 120px;
+}
+
+.options-dropdown button {
+  width: 100%;
+  padding: 8px 16px;
+  text-align: left;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #4B5563;
+}
+
+.options-dropdown button:hover {
+  background-color: #F3F4F6;
+}
+
+.options-dropdown button.delete {
+  color: #DC2626;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .education-summary-container {
+    margin-left: 0;
+    padding: 20px;
+    padding-top: 80px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .education-item {
+    flex-direction: column;
+  }
+
+  .degree-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .preview-btn,
+  .next-btn {
+    width: 100%;
+  }
+} 

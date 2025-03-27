@@ -1,0 +1,412 @@
+body {
+    overflow-y: auto; /* Enable page scrolling */
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #39016c; /* Changed to dark purple */
+    font-size: 1rem;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 40px;
+    margin-top: 20px; /* Reduced from 30px */
+    margin-bottom: 10px; /* Reduced from 30px */
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+.back-button span {
+    margin-right: 0.5rem;
+    color: #39016c; /* Changed to dark purple */
+}
+
+/* .back-button span {
+    margin-right: 0.75rem; /* mr-3 */
+    /* font-size: 1.25rem; slightly larger arrow */
+/* } */ 
+
+.edu-content {
+    margin-left: 40px; /* Consistent left margin */
+}
+
+.edu-content h1 {
+    font-size: 2rem;
+    color: #39016c; /* Changed to dark purple */
+    margin-bottom: 12px; /* Reduced spacing */
+}
+
+.edu-content h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #39016c; /* Changed to dark purple */
+    margin-bottom: 15px; /* Reduced spacing */
+}
+
+.edu-content h3 {
+    font-size: 1.8rem;
+    color: #39016c; /* Changed to dark purple */
+    margin-bottom: 15px; /* Reduced spacing */
+}
+
+.edu-content p1 {
+    display: block;
+    font-size: 1.2rem;
+    color: #39016c; /* Changed to dark purple */
+    margin-bottom: 12px; /* Reduced spacing */
+}
+
+.edu-content p2 {
+    display: block;
+    font-size: 1.2rem;
+    color: #a47acc; /* Lighter purple for secondary text */
+    margin-bottom: 12px; /* Reduced spacing */
+}
+
+.Title {
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.Title h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #39016c;
+    margin-bottom: 8px;
+}
+
+.Title h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #39016c;
+    margin-bottom: 24px;
+}
+
+.Title p1 {
+    display: block;
+    font-size: 1rem;
+    color: #39016c;
+    margin-bottom: 32px;
+}
+
+.Title p2 {
+    display: block;
+    font-size: 0.875rem;
+    color: #a47acc;
+    margin-bottom: 40px; /* Add space before the form */
+}
+
+.input-row {
+    display: flex;
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+    margin-left: 40px;
+    max-width: 1000px; /* Increased max-width */
+}
+
+.input-group {
+    flex: 1;
+}
+
+.input-group p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #39016c;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0; /* Removed border-radius for sharp edges */
+    font-size: 1rem;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.Edutip-button {
+    background-color: #559c60;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 100px; /* Added border radius for curved edges */
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+    margin-left: 500px; /* Push button to right */
+    margin-right: 40px; /* Add right margin for spacing */
+    margin-top: 100px;
+    display: block; /* Needed for margin-left: auto to work */
+    
+}
+
+.Edutip-button:hover {
+    background-color: #07db27;
+}
+
+/* Add a wrapper for the form to ensure proper button positioning */
+form {
+    max-width: 1000px;
+    margin-left: 40px;
+}
+
+.nested-inputs {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.nested-inputs .input-group {
+    flex: 1;
+}
+
+.additional-info {
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.additional-info h3 {
+    font-size: 1.25rem; /* Smaller text size */
+    color: #39016c;
+    font-weight: 600;
+}
+
+.optional-text {
+    font-weight: normal; /* Remove bold from optional text */
+    color: #666666; /* Slightly lighter color for optional text */
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it appears above other elements */
+    margin-top: -30px; /* Adjust to position above the icon */
+    left: 50%; /* Center the tooltip */
+    transform: translateX(-50%); /* Center alignment */
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.close-button {
+    background: none;
+    border: none;
+    color: #2563eb;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.close-button:hover {
+    text-decoration: underline;
+}
+
+.icon {
+    position:relative; /* Ensure the tooltip is positioned relative to the icon */
+}
+
+.input-container {
+    margin-bottom: 1rem;
+    padding: 10px;
+}
+
+.input-label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0A1B3F;
+    margin-bottom: 0.5rem;
+    padding-left: 35px;
+}
+
+.input-wrapper {
+    position: relative;
+    padding-left: 30px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    padding-right: 2.5rem;
+}
+
+.delete-button {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6B7280;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    color: #374151;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+.add-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 9999px;
+    background: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-button:hover {
+    background: #f9fafb;
+}
+.submit-button {
+    background-color: #559c60;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 100px; /* Added border radius for curved edges */
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+    margin-left:auto; /* Push button to right */
+    margin-right: 40px; /* Add right margin for spacing */
+    margin-top: 50px;
+    display: block; /* Needed for margin-left: auto to work */
+    
+}
+
+/* Tips Layout Styles */
+.tips-container {
+    padding: 10px; /* Reduced from 20px */
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.tips-content {
+    padding: 10px; /* Reduced from 20px */
+    padding-left: 60px;
+    margin-top: 0; /* Removed top margin completely */
+    text-align: left;
+    max-width: 800px;
+}
+
+.tips-header {
+    margin-bottom: 20px; /* Reduced bottom margin */
+    margin-left: 40px; /* Added left margin */
+}
+
+.tips-header h1 {
+    font-size: 2.5em;
+    color: #39016c; /* Changed to match your theme color */
+    margin-bottom: 5px; /* Reduced bottom margin */
+    text-align: left;
+    line-height: 1.2; /* Tighter line height */
+}
+
+.tips-header h2 {
+    font-size: 3em;
+    color: #39016c;
+    margin: 5px 0; /* Reduced top/bottom margin */
+    text-align: left;
+    line-height: 1.1; /* Tighter line height */
+}
+
+.tips-header h3 {
+    font-size: 1.8em;
+    color: #39016c; /* Changed to match your theme color */
+    margin: 15px 0 10px 0; /* Reduced top/bottom margin */
+    text-align: left;
+    line-height: 1.2; /* Tighter line height */
+}
+
+.tips-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Reduced gap between paragraphs */
+    margin-top: 10px; /* Reduced top margin */
+    margin-left: 40px; /* Added left margin */
+}
+
+.tips-text p1 {
+    font-size: 1.2em;
+    color: #39016c; /* Changed to match your theme color */
+    display: block;
+    text-align: left;
+    line-height: 1.3; /* Tighter line height */
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+.tips-text p2 {
+    font-size: 1.2em;
+    color: #a47acc; /* Lighter purple for secondary text */
+    display: block;
+    text-align: left;
+    line-height: 1.3; /* Tighter line height */
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tips-content {
+        padding: 15px;
+        padding-left: 40px; /* Adjusted for mobile */
+        margin-top: 20px; /* Reduced top margin */
+    }
+
+    .tips-header, .tips-text {
+        margin-left: 20px; /* Less margin on mobile */
+    }
+
+    .tips-header h1 {
+        font-size: 2em;
+        margin-bottom: 3px; /* Even tighter spacing on mobile */
+    }
+
+    .tips-header h2 {
+        font-size: 2.5em;
+        margin: 3px 0; /* Even tighter spacing on mobile */
+    }
+
+    .tips-header h3 {
+        font-size: 1.5em;
+        margin: 10px 0 8px 0; /* Even tighter spacing on mobile */
+    }
+
+    .tips-text {
+        gap: 5px; /* Even less gap on mobile */
+    }
+
+    .tips-text p1, .tips-text p2 {
+        font-size: 1.1em;
+    }
+}
+
+/* Override for the back button in Summary component */
+.tips-container .back-button {
+    margin-left: 20px; /* Reduced from 260px to 20px */
+    align-self: flex-start;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 800px;
+}

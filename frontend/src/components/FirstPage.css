@@ -1,0 +1,321 @@
+:root {
+  --blue-primary: #1E40AF;
+  --blue-light: #3B82F6;
+  --purple-primary: #6B46C1;
+  --purple-light: #9F7AEA;
+  --gradient: linear-gradient(135deg, var(--blue-primary), var(--purple-primary));
+}
+
+.landing-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #F8FAFF 0%, #F3F0FF 100%);
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 60px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(110, 40, 70, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 120px auto 0;
+  padding: 40px 60px;
+  gap: 80px;
+  position: relative;
+}
+
+.left-content {
+  flex: 1;
+  max-width: 560px;
+  padding-top: 60px;
+}
+
+.title {
+  font-size: 52px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.intro-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 32px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(107, 70, 193, 0.1);
+}
+
+.intro-step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(107, 70, 193, 0.12);
+  border-color: rgba(107, 70, 193, 0.2);
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  background: var(--gradient);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: rgb(228, 3, 3);
+  font-size: 20px;
+}
+
+.step-text {
+  flex: 1;
+}
+
+.action {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--blue-primary);
+  display: block;
+  margin-bottom: 8px;
+  
+}
+
+.center-content {
+  flex: 1;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding-top: 40px;
+}
+
+.resume-container {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.resume-container:hover {
+  transform: translateY(-8px);
+}
+
+.resume-preview {
+  width: 360px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(107, 70, 193, 0.15);
+  border: 1px solid rgba(107, 70, 193, 0.1);
+}
+
+.checkmark-circle {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 56px;
+  height: 56px;
+  background: var(--gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 28px;
+  box-shadow: 0 8px 20px rgba(107, 70, 193, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 8px 20px rgba(107, 70, 193, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(107, 70, 193, 0.4);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 8px 20px rgba(107, 70, 193, 0.3);
+  }
+}
+
+.next-button {
+  padding: 16px 48px;
+  background: var(--gradient);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(107, 70, 193, 0.2);
+}
+
+.next-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(107, 70, 193, 0.3);
+}
+
+.login-icon {
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  background: rgba(59, 130, 246, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-icon:hover {
+  transform: scale(1.05);
+  background: rgba(59, 130, 246, 0.2);
+}
+
+.login-icon svg {
+  width: 24ch;
+  height: 24px;
+  color: #3B82F6;
+}
+
+.login-icon:hover svg {
+  color: #2563EB;
+}
+
+@media (max-width: 1024px) {
+  .content {
+    padding: 40px;
+    gap: 60px;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+
+  .resume-preview {
+    width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 20px 24px;
+  }
+
+  .content {
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    margin-top: 100px;
+    gap: 40px;
+  }
+
+  .left-content {
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .steps {
+    align-items: center;
+  }
+
+  .intro-step {
+    width: 100%;
+    max-width: 400px;
+    padding: 24px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .action {
+    font-size: 18px;
+  }
+
+  .resume-preview {
+    width: 280px;
+  }
+
+  .checkmark-circle {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+  }
+}
+
+/* Override any conflicting styles */
+.landing-page .header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.landing-page .content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Remove any sidebar-related styles */
+.landing-page .sidebar,
+.landing-page .resume-builder {
+  display: none;
+}
+
+/* Ensure full-width layout */
+.landing-page .content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 120px auto 0;
+  padding: 40px 60px;
+}
+
+/* Add specific media queries for landing page */
+@media (max-width: 768px) {
+  .landing-page .content {
+    padding: 24px;
+    margin-top: 100px;
+  }
+  
+  .landing-page .header {
+    padding: 20px 24px;
+  }
+}

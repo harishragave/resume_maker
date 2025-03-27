@@ -1,0 +1,17 @@
+.resume-builder {
+  display: flex;
+  min-height: 100vh;
+  background-color: #FFFFFF;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 280px; /* Width of sidebar */
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+} 

@@ -1,0 +1,582 @@
+.tips-container {
+    padding: 10px;
+    max-width: 100%;
+    margin: 0 0 0 250px; /* Align with sidebar edge */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.back-button-container {
+    width: 100%;
+    display: flex;
+    padding: 0;
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
+.back-button {
+    align-self: flex-start;
+    margin-left: 0; /* Remove left margin */
+    margin-top: 20px;
+    margin-bottom: 15px; /* Reduced bottom margin */
+    position: relative;
+    left: 0; /* Align to left edge */
+}
+
+/* Summary Component Styles */
+.summary-layout {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+.summary-content {
+    margin-left: 0;
+    margin-top: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 55%; /* Reduced width to make room for editor */
+    max-width: 700px;
+}
+
+.summary-title {
+    font-size: 2rem;
+    color: #0A2647;
+    margin-bottom: 8px;
+    text-align: left; /* Changed from center to left */
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.summary-text {
+    font-size: 1.2rem;
+    color: #0A2647;
+    display: block;
+    text-align: left; /* Changed from center to left */
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+/* Unified container for search and recommendations */
+.unified-container {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    height: 600px; /* Fixed height to align with editor */
+}
+
+/* Search box styling */
+.search-container {
+    margin-top: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 20px;
+    flex-shrink: 0; /* Prevent search from shrinking */
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    background-color: #f5f7fa;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    position: relative;
+}
+
+.search-icon {
+    color: #0A2647;
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #0A2647;
+    outline: none;
+    padding: 0;
+}
+
+.search-input::placeholder {
+    color: #94a3b8;
+}
+
+.clear-search {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+}
+
+.clear-search:hover {
+    color: #64748b;
+}
+
+/* Suggestions dropdown */
+.suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 14px;
+    color: #0A2647;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f7ff;
+}
+
+/* No results message */
+.no-results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    text-align: center;
+    color: #64748b;
+    padding: 0 20px;
+}
+
+.no-results p {
+    margin: 5px 0;
+}
+
+.no-results p:first-child {
+    font-size: 18px;
+    font-weight: 500;
+    color: #0A2647;
+    margin-bottom: 10px;
+}
+
+/* Recommendations header */
+.recommendations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.recommendations-title {
+    font-size: 1.1rem;
+    color: #0A2647;
+    font-weight: 500;
+}
+
+.recommendations-count {
+    font-size: 0.9rem;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.clear-all-button {
+    background-color: #f1f5f9;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.clear-all-button:hover {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+
+/* Scrollable container */
+.scrollable-container {
+    overflow-y: auto;
+    flex-grow: 1; /* Allow container to grow and fill available space */
+    margin-right: -10px; /* Offset for padding to hide scrollbar */
+    padding-right: 10px; /* Add padding to accommodate scrollbar */
+}
+
+/* Scrollbar styling */
+.scrollable-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Job description cards */
+.job-descriptions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.job-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px 20px; /* Adjust padding */
+    transition: all 0.2s ease;
+    position: relative; /* For proper positioning of children */
+}
+
+.job-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.job-card.selected {
+    border: 1px solid #3b82f6;
+    background-color: #f0f7ff;
+}
+
+.job-card-content {
+    display: flex;
+    align-items: center; /* Changed from flex-start to center for vertical alignment */
+    gap: 16px;
+    position: relative; /* Added for absolute positioning of circle */
+    padding-left: 40px; /* Add space for the circle */
+    min-height: 85px; /* Ensure minimum height for proper centering */
+}
+
+.select-circle {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    border-radius: 50%;
+    background-color: #2563eb;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: absolute; /* Position absolutely */
+    left: -5px; /* Position to the left */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    z-index: 2; /* Ensure it's above the job card */
+}
+
+.select-circle:hover {
+    transform: translateY(-50%) scale(1.1); /* Keep vertical centering while scaling */
+    background-color: #1d4ed8;
+}
+
+.job-card.selected .select-circle {
+    background-color: #059669;
+}
+
+.job-text {
+    flex: 1;
+    margin-left: 5px; /* Small margin to offset from the circle */
+}
+
+.job-card h3 {
+    font-size: 18px;
+    color: #0A2647;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.job-card p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Text Editor Styles */
+.editor-container {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 40%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    height: 600px; /* Same height as recommendations */
+}
+
+.editor-wrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.editor-wrapper .quill {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.editor-wrapper .ql-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.editor-wrapper .ql-toolbar {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px 15px;
+}
+
+.editor-wrapper .ql-editor {
+    min-height: 400px;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.editor-wrapper .ql-editor p {
+    margin-bottom: 1em;
+}
+
+.editor-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.editor-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #0A2647;
+}
+
+.formatting-toolbar {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.format-button {
+    background: none;
+    border: none;
+    padding: 6px 8px;
+    border-radius: 4px;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.format-button:hover {
+    background-color: #f1f5f9;
+    color: #0A2647;
+}
+
+.format-button.disabled {
+    color: #cbd5e1;
+    cursor: not-allowed;
+}
+
+.format-button.disabled:hover {
+    background: none;
+}
+
+.divider {
+    width: 1px;
+    height: 20px;
+    background-color: #e2e8f0;
+    margin: 0 4px;
+}
+
+.editor-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.save-button {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.save-button:hover {
+    background-color: #1d4ed8;
+}
+
+.editor-area {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    line-height: 1.6;
+    font-size: 15px;
+    color: #1e293b;
+    outline: none;
+    border: none;
+    min-height: 400px;
+}
+
+.editor-area:empty:before {
+    content: attr(data-placeholder);
+    color: #94a3b8;
+    font-style: italic;
+    position: absolute;
+    opacity: 0.6;
+}
+
+.editor-area:focus {
+    background-color: #f8fafc;
+}
+
+.editor-area p {
+    margin-bottom: 1em;
+    min-height: 1.5em;
+}
+
+.editor-area p:last-child {
+    margin-bottom: 0;
+}
+
+.editor-area br {
+    content: '';
+    display: block;
+    margin: 0.5em 0;
+}
+
+.summary-divider {
+    height: 1px;
+    background-color: #e2e8f0;
+    margin: 20px 0;
+    position: relative;
+}
+
+.summary-divider:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: -8px;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 16px;
+    background-color: white;
+    border-left: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-top: 1px solid #e2e8f0;
+    border-radius: 3px 3px 0 0;
+}
+
+/* Format button for paragraph */
+.format-button:nth-child(4) {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+    .summary-layout {
+        flex-direction: column;
+    }
+    
+    .summary-content {
+        width: 100%;
+        max-width: 800px;
+    }
+    
+    .editor-container {
+        width: 100%;
+        max-width: 800px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .editor-wrapper .ql-editor {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .unified-container {
+        max-width: 95%;
+        height: 500px; /* Slightly shorter on mobile */
+    }
+    
+    .job-card h3 {
+        font-size: 16px;
+    }
+    
+    .job-card p {
+        font-size: 14px;
+    }
+
+    .select-circle {
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+        left: -3px; /* Slightly adjust position for mobile */
+    }
+    
+    .job-card-content {
+        padding-left: 30px; /* Less padding on mobile */
+    }
+}

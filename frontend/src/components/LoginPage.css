@@ -1,0 +1,147 @@
+.login-page-container {
+  width: 100%;
+  min-height: 100vh;
+  background: white;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  color: #12263A;
+  font-size: 20px;
+  padding: 20px 40px;
+  font-weight: bold;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.perfect {
+  color: #FF4444;
+}
+
+.login-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.login-box {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-title {
+  color: #12263A;
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #12263A;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #008080;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #12263A;
+}
+
+.remember-me input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: #008080;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  background: #008080;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.login-button:hover {
+  background: #006666;
+}
+
+.signup-prompt {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #12263A;
+}
+
+.signup-prompt a {
+  color: #008080;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-prompt a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 20px;
+  }
+
+  .logo {
+    padding: 15px 20px;
+  }
+} 
